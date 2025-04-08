@@ -6,7 +6,7 @@
 
 ---
 ## Технологии
-* Go 1.21.1
+* Go 1.23.5
 * REST API
 * Docker
 * Postman
