@@ -1,0 +1,59 @@
+[![Go](https://img.shields.io/badge/-Go-464646?style=flat-square&logo=Go)](https://go.dev/)
+[![docker](https://img.shields.io/badge/-Docker-464646?style=flat-square&logo=docker)](https://www.docker.com/)
+
+# url-shortener
+# Сервис, предоставляющий API по созданию сокращённых ссылок
+
+---
+## Технологии
+* Go 1.21.1
+* REST API
+* Docker
+* Postman
+
+---
+## Взаимодейстивие с сервисом
+### Создать конфиг
+
+```bash
+cp config/local_example.yml config/local.yml
+```
+
+### Экспорировать путь до конфига
+`export CONFIG_PATH="./config/local.yml"` 
+
+
+*Пример POST запроса на адрес* `http://localhost:8081/url`:
+
+**Request:**
+```JSON
+{
+    "url": "https://ya.ru"
+}
+```
+**Response:**
+```JSON
+{
+    "status": "OK",
+    "alias": "asBS1"
+}
+```
+*Пример GET запроса на адрес* `http://localhost:8000/asBS1`:
+
+**Response:**
+```JSON
+{
+    "status": "OK",
+    "url": "https://ya.ru"
+}
+```
+*Повторный POST запрос на адрес* `http://localhost:8000/url`:
+**Response:**
+```JSON
+{
+    "status": "Error",
+    "error": "url already exists"
+}
+```
+## Лицензия:
+[MIT](https://opensource.org/licenses/MIT)
