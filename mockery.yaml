@@ -1,0 +1,6 @@
+packages:
+  - path: ./internal/http_server/handlers/redirect
+    output: ./internal/http_server/handlers/redirect/mocks
+    interfaces:
+      - name: UrlGetter
+        with-expecter: true
