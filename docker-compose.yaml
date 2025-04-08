@@ -1,0 +1,8 @@
+services:
+  api:
+    build: .
+    command: ["sh", "-c", "export CONFIG_PATH=./config/local.yml && ./cmd/url-shortener/main"]
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./storage:/app/storage

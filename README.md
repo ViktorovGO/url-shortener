@@ -13,14 +13,10 @@
 
 ---
 ## Взаимодейстивие с сервисом
-### Создать конфиг
-
-```bash
-cp config/local_example.yml config/local.yml
+### Запуск сервера
 ```
-
-### Экспорировать путь до конфига
-`export CONFIG_PATH="./config/local.yml"` 
+docker-compose up-d
+```
 
 
 *Пример POST запроса на адрес* `http://localhost:8081/url`:
